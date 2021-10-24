@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View, FlatList } from "react-native";
 import Designer from "../Designer/Designer";
+import Colors from "../../constants/colors";
 
 const USERS = [
   {
@@ -76,14 +77,19 @@ const USERS = [
     },
   },
 ];
+const numColumns = 2
 
-export default function CardList({ designersList }) {
+export default function CardList() {
   return (
     <View style={styles.container}>
       <FlatList
+        style={styles.flatList}
         data={USERS}
         renderItem={({ item }) => <Designer items={item} />}
-        keyExtractor={(item) => item.id}
+        key={'#'}
+        keyExtractor={(item) => "#" + item.id}
+        horizontal={false}
+        numColumns={2}
       />
     </View>
   );
@@ -91,7 +97,8 @@ export default function CardList({ designersList }) {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    justifyContent: "center",
+   width:'100%',
+   paddingHorizontal: 25,
+   marginTop:15,
   },
 });

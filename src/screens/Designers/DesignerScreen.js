@@ -1,77 +1,56 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Text,
   View,
   StyleSheet,
-  Button,
   Image,
-  useWindowDimensions,
 } from "react-native";
-
-import CardList from "./../../components/CardList/CardList";
+import CardList from "../../components/CardList/CardList";
+import ScreenContainer from "../../components/ScreenContainer/ScreenContainer";
 import Colors from "../../constants/colors";
 
 const logo = require("../../assets/logo-bude-letra.png");
 
-const Home = () => {
-  const windowWidth = useWindowDimensions().width;
-
+const DesignerScreen = () => {
   return (
-    <>
+    <ScreenContainer>
       <View style={styles.head}>
-        <Image source={logo} style={styles.logo} />
         <View style={styles.titleContainer}>
-          <Text style={styles.title}>uscando talento </Text>
-          <Text style={styles.title}>cordobés?</Text>
+          <Text style={styles.title}>Diseño Gráfico</Text>
         </View>
       </View>
       <View style={styles.bg}>
         <CardList />
       </View>
-    </>
+    </ScreenContainer>
   );
 };
-export default Home;
+export default DesignerScreen;
 
 const styles = StyleSheet.create({
   head: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "center",
+    justifyContent:'center',
+    marginVertical:15
   },
-  containerLogo: {
-    height: 100,
-  },
-  logo: {
-    height: 80,
-    resizeMode: "cover",
-  },
-
   titleContainer: {
     alignItems: "center",
-    transform: [{ translateX: -15 }, { translateY: 5 }],
   },
   title: {
     color: Colors.white,
-    fontSize: 17,
-    fontWeight: "900",
-    textTransform: "uppercase",
-  },
-  image: {
-    height: 100,
-    width: "100%",
-    resizeMode: "cover",
+    fontSize: 22,
+    fontFamily: 'Roboto500'
   },
   bg: {
     flex: 1,
     width: "100%",
-    padding: 20,
-    backgroundColor: Colors.white,
-    marginVertical: 20,
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
+    marginTop: 10,
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
+    backgroundColor:Colors.white
   },
 });
+
+
 
 /*  *export default function Cards({ style, ...props }) {
   /*  const handleSubstractItem = (id) => {

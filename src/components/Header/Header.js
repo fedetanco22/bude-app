@@ -5,7 +5,7 @@ import Colors from "../../constants/colors";
 
 const logo = require("../../assets/logo-bude.png");
 
-const Header = ({ title }) => {
+const Header = () => {
   return (
     <View style={styles.head}>
       <Image source={logo} style={styles.image} />
@@ -16,14 +16,15 @@ export default Header;
 
 const styles = StyleSheet.create({
   head: {
-    width: "100%",
+    width:'100%',
     marginTop: 36,
     backgroundColor: Colors.primary,
-    padding: 10,
-    alignItems: "center",
+    paddingVertical: 5,
+    alignItems:'center'
+    
   },
   image: {
-    width: 80,
-    height: 40,
+    width: 60,
+    height: 30,
   },
 });
