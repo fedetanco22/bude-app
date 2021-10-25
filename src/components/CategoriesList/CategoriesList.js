@@ -2,7 +2,6 @@ import React from 'react'
 import { View , StyleSheet, FlatList, Text, Image} from 'react-native';
 import Category from '../Category/Category';
 import Colors from '../../constants/colors';
-import HomeScreen from '../../screens/HomeScreen/HomeScreen';
 
 const CATEGORIES = [
     {
@@ -55,7 +54,7 @@ const Categories = () => {
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.id} 
-        contentContainerStyle={styles.list}   
+        contentContainerStyle={styles.list} 
       />
       <View>
         <Text style={styles.title}>Lo que dicen por ahi...</Text>
